@@ -8,8 +8,8 @@ def handle_user_input():
         print("You decided to exit")
         return None
     correct_inputs = []
-    for value in days_input.split(","):
-        days = handle_user_input_item(value.strip())
+    for value in set(map(str.strip, days_input.split(","))):
+        days = handle_user_input_item(value)
         if days:
             correct_inputs.append(days)
     return correct_inputs
